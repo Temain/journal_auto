@@ -17,6 +17,10 @@
 
 .navigation-panel {
   border-bottom: solid 2px #F6F5F3;
+
+  nav {
+    display: inline-block;
+  }
 }
 
 .navigation{
@@ -64,7 +68,7 @@
 }
 
 #Container{
-  margin-top: 110px;
+  margin-top: 75px;
   padding: 0px 20px;
   background: white;
 
@@ -78,7 +82,7 @@
     margin-bottom: 5px;
     // border-bottom: 1px solid #4e5d6c;
     width: 100%;
-    color: #c0c0c0;
+    //color: #c0c0c0;
     font-size: 0.9em;
 
     i {
@@ -98,6 +102,7 @@
 
     .name {
       font-size: 1.2em;
+      font-weight: bold;
       display: inline;
     }
 

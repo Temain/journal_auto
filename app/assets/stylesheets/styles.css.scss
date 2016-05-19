@@ -49,12 +49,15 @@ body {
 
   .search-form {
     margin: 10px;
+    display: inline-block;
+    float: right;
+    width: 30%;
   }
 
   .fixed-top {
     position: fixed;
     background-color: white;
-    width: 50%;
+    //width: 50%;
     opacity: 0.8;
   }
 
@@ -144,7 +147,7 @@ body {
     @extend .menu-base;
     // right: 0px;
     bottom: 0px;
-    width: 50%;
+    width: 100%;
     border-top: solid 2px #F6F5F3;
     background: white;
 

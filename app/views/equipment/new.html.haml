@@ -1,7 +1,7 @@
 .container-fluid.edit
   .row.full-height
     .col-md-6.col-md-offset-3.wrap
-      %h1.title Новое оборудование
+      %h1.title Новый автомобиль
       %hr
 
       #Container.top
@@ -13,7 +13,7 @@
               .col-lg-12
                 .left-inner-addon
                   %i.glyphicon.glyphicon-search
-                = text_field_tag :full_name, nil, class: "typeahead search-equipment form-control", placeholder: "Найти оборудование..."
+                = text_field_tag :full_name, nil, class: "typeahead search-equipment form-control", placeholder: "Поиск..."
 
             #flash-display
               - if @item.errors.any?
@@ -28,7 +28,7 @@
 
               .col-lg-9
                 = f.select :equipment_type_id, @equipment_types,
-                           { prompt: "Выберите тип оборудования..." }, class: "form-control"
+                           { prompt: "Выберите тип автомобиля..." }, class: "form-control"
 
             = fields_for @item.manufacturer do |m|
               .form-group
@@ -49,9 +49,9 @@
                     { prompt: "Выберите подразделение..." }, class: "form-control"
 
             .form-group
-              = f.label :inventory_number, "Инвентарный номер", class: "col-lg-3 control-label"
+              = f.label :inventory_number, "Транзитный номер", class: "col-lg-3 control-label"
               .col-lg-9
-                = f.text_field :inventory_number, placeholder: "Введите инвентарный номер...",
+                = f.text_field :inventory_number, placeholder: "Введите транзитный номер...",
                                 maxlength: "12", class: "form-control"
 
             .form-group
