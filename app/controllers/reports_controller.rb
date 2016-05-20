@@ -59,7 +59,8 @@ class ReportsController < ApplicationController
     report = ThinReports::Report.create layout: File.join(Rails.root, 'app', 'reports', 'report_by_equipment.tlf') do |r|
       r.start_new_page do |page|
         page.values equipment: "#{@equipment.full_name}",
-                    company: "ООО 'ЦТП' (Центр технической поддержки)"
+                    company: "ООО 'ЦТП' (Центр технической поддержки)",
+                    date: @equipment.created_at.strftime("%m.%d.%Y")
                     #department: "#{@equipment.department.name}",
                     #chief: "Руководитель:  #{@equipment.department.chief}",
                     #mat: "Материально ответственный:  #{@equipment.department.materially_responsible}",
@@ -69,7 +70,7 @@ class ReportsController < ApplicationController
           event = record.journalable
           page.list(:list).add_row do |row|
             row.values event_date: "#{record.action_date.strftime('%d.%m.%Y')}г.",
-                       event: event.instance_of?(Repair) ? event.reason : "Перемещен из подразделения \"#{event.old_department.name}\"
+                       event: event.instance_of?(Repair) ? "#{event.reason}. Заменённые детали: #{event.spares.map(&:name).join(',')}" : "Перемещен из подразделения \"#{event.old_department.name}\"
                                                                      в подразделение \"#{event.new_department.name}\""
           end
 
@@ -80,6 +81,10 @@ class ReportsController < ApplicationController
     send_data report.generate, filename:    'report_by_equipment.pdf',
                                type:        'application/pdf',
                                disposition: 'attachment'
+  end
+
+  def work_performed
+    render "equipment/work_performed"
   end
 
 end

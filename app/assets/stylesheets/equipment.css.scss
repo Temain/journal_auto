@@ -34,7 +34,9 @@
     display: inline-block;
     list-style: none;
     margin-right: -4px;
-    padding: 5px 15px 3px 15px;
+    padding: 15px 15px 3px 15px;
+    font-weight: bold;
+    font-size: 1.1em;
     //font-weight: 100;
 
     &:hover {
@@ -117,6 +119,7 @@
     .actions {
       display: inline-block;
       float: right;
+      margin-right: 25px;
 
       & > a {
         /*display: inline-block;*/

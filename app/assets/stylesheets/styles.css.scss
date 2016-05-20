@@ -70,6 +70,11 @@ body {
     .menu-item {
       display: inline-block;
       padding: 5px 10px;
+
+      & > a {
+        display: block;
+      }
+
       & > a > i:hover {
         // color: #ffffff;
         color: black;
@@ -163,7 +168,7 @@ body {
 
   .back {
     @extend .menu-base;
-    left: 25%;
+    // left: 25%;
     top: 0px;
 
     .text-muted {

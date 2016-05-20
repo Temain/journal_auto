@@ -32,7 +32,7 @@ class Equipment < ActiveRecord::Base
   default_scope -> { order('updated_at DESC') }
 
   def full_name
-    "#{equipment_type.name} #{ manufacturer.nil? ? "" : manufacturer.name } #{ model ? model : "" }"
+    "#{ manufacturer.nil? ? "" : manufacturer.name } #{ model ? model : "" }"
   end
 
   def to_partial_path

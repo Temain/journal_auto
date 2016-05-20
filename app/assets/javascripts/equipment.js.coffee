@@ -149,10 +149,10 @@ ready = ->
   )
 
   $('#datetimepicker, #start_date, #end_date').datetimepicker({
-    language: 'ru',
-    pickTime: false,
-    startDate: new Date(2013, 2, 1),
-    endDate: new Date(2013, 3, 30)
+    locale: 'ru',
+    # pickTime: false,
+    # startDate: new Date(2013, 2, 1),
+    # endDate: new Date(2013, 3, 30)
   });
 
   $('#action_date, #start_date, #end_date').on('change', (ev) ->

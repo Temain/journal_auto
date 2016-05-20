@@ -19,7 +19,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require moment/ru
-//= require locales/bootstrap-datetimepicker.ru.js
+// require bootstrap-datetimepicker.ru.js
 //= require select2
 //= require select2_locale_ru
 //= require timeliner
@@ -27,6 +27,10 @@
 //= require typeahead.jquery.min
 //= require nprogress
 //= require nprogress-turbolinks
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/modules/data
+//= require highcharts/modules/exporting
 // require pace.min
 //= require_tree .
 

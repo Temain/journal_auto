@@ -23,7 +23,7 @@
         .row.menu
           .col-md-12.col-xs-12
             .menu-item
-              = link_to new_equipment_path, id: "add-link", "data-content" => "Добавить оборудование", "rel" => "popover", "data-placement" => "top",
+              = link_to new_equipment_path, id: "add-link", "data-content" => "Добавить", "rel" => "popover", "data-placement" => "top",
              "data-trigger" => "hover", method: :get do
                 = fa_icon "plus-square 2x", class: "text-muted"
             -#%span Добавить
@@ -37,7 +37,7 @@
               "rel" => "popover", "data-placement" => "top", "data-trigger" => "hover" do
                 = fa_icon "bar-chart-o 2x", class: "text-muted"
               %ul.dropdown-menu.reports-dropdown
-                %li= link_to "По подразделению", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_department_modal"
+                -#%li= link_to "По подразделению", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_department_modal"
                 %li= link_to "По зап. части", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_spare_modal"
 
             .pull-right

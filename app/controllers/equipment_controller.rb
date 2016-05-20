@@ -6,7 +6,7 @@ class EquipmentController < ApplicationController
 
   def index
     @equipment = Equipment.search(params[:search]).page params[:page]
-    @categories = Category.all.order('id')
+    @categories = Category.all
 
     if request.xhr?
       respond_to do |format|
@@ -89,7 +89,7 @@ class EquipmentController < ApplicationController
     @repair.create_journal_record(equipment_id: @item.id, user_id: current_user.id,
                                   action_date: params[:action_date].to_date)
     if @repair.save
-      flash[:notice] = "#{@item.full_name} успешно отправлен в ремонт."
+      flash[:notice] = "#{@item.full_name} успешно отправлен в СТО."
     else
       flash[:danger] = "Извините, произошла ошибка."
     end

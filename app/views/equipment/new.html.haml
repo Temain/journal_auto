@@ -1,6 +1,6 @@
 .container-fluid.edit
   .row.full-height
-    .col-md-6.col-md-offset-3.wrap
+    .col-md-12.wrap
       %h1.title Новый автомобиль
       %hr
 
@@ -24,38 +24,37 @@
 
             .form-group
               - field_with_errors @item, :equipment_type do
-                - f.label :equipment_type_id, "Тип", class: "col-lg-3 control-label"
-
-              .col-lg-9
+                - f.label :equipment_type_id, "Тип", class: "col-lg-2 control-label"
+              .col-lg-10
                 = f.select :equipment_type_id, @equipment_types,
                            { prompt: "Выберите тип автомобиля..." }, class: "form-control"
 
             = fields_for @item.manufacturer do |m|
               .form-group
-                = m.label :name, "Производитель", class: "col-lg-3 control-label"
-                #remote.col-lg-9
+                = m.label :name, "Производитель", class: "col-lg-2 control-label"
+                #remote.col-lg-10
                   = m.text_field :name, class: "typeahead manufacturer form-control", placeholder: "Введите производителя..."
 
             .form-group
-              = f.label :model, "Модель", class: "col-lg-3 control-label"
-              .col-lg-9
+              = f.label :model, "Модель", class: "col-lg-2 control-label"
+              .col-lg-10
                 = f.text_field :model, placeholder: "Введите модель...", class: "form-control"
 
             .form-group
               - field_with_errors @item, :department do
-                = f.label :department_id, "Подразделение", class: "col-lg-3 control-label"
-              .col-lg-9
+                = f.label :department_id, "Салон", class: "col-lg-2 control-label"
+              .col-lg-10
                 = f.select :department_id, @departments,
-                    { prompt: "Выберите подразделение..." }, class: "form-control"
+                    { prompt: "Выберите салон..." }, class: "form-control"
 
             .form-group
-              = f.label :inventory_number, "Транзитный номер", class: "col-lg-3 control-label"
-              .col-lg-9
+              = f.label :inventory_number, "Транзитный номер", class: "col-lg-2 control-label"
+              .col-lg-10
                 = f.text_field :inventory_number, placeholder: "Введите транзитный номер...",
                                 maxlength: "12", class: "form-control"
 
             .form-group
-              .col-lg-9.col-lg-offset-3
+              .col-lg-10.col-lg-offset-2
                 = f.button class: "btn btn-primary" do
                   %i.glyphicon.glyphicon-floppy-disk
                   Сохранить
@@ -63,7 +62,7 @@
       .row.menu
         .col-md-12.col-xs-12
           .menu-item
-            = link_to new_equipment_path, id: "add-link", "data-content" => "Добавить оборудование", "rel" => "popover", "data-placement" => "top",
+            = link_to new_equipment_path, id: "add-link", "data-content" => "Добавить", "rel" => "popover", "data-placement" => "top",
              "data-trigger" => "hover", method: :get do
               = fa_icon "plus-square 2x", class: "text-muted"
           -#%span Добавить
@@ -77,7 +76,7 @@
               "rel" => "popover", "data-placement" => "top", "data-trigger" => "hover" do
               = fa_icon "bar-chart-o 2x", class: "text-muted"
             %ul.dropdown-menu.reports-dropdown
-              %li= link_to "По подразделению", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_department_modal"
+              -#%li= link_to "По подразделению", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_department_modal"
               %li= link_to "По зап. части", "javascript:;", class: "text-muted", "data-toggle" => "modal", "data-target" => "#report_by_spare_modal"
 
           .pull-right

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,10 +30,10 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'normalize-rails'
 gem 'bootstrap-sass'
-gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem "font-awesome-rails"
-gem "select2-rails"
+gem 'select2-rails', '~> 3.5', '>= 3.5.9'
 gem 'kaminari'
 gem 'annotate'
 gem 'russian'
@@ -42,7 +42,8 @@ gem 'unicode'
 gem 'remotipart', '~> 1.2'
 #gem 'pace-rails'
 gem 'nprogress-rails'
-gem 'thinreports'
+gem 'thinreports', '~> 0.7.7'
+gem "highcharts-rails"
 #gem "jasper-rails"
 
 group :production do
