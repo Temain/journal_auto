@@ -11,11 +11,11 @@ default: &default
 
 development:
   adapter: postgresql
-  host: ec2-23-21-167-249.compute-1.amazonaws.com
-  username: qpqrtetphsxmcd
-  database: d2fgi84drasdht
+  host: ec2-54-83-47-88.compute-1.amazonaws.com
+  username: uftnujxkywwhxi
+  database: d3rqudfjmr86uo
   port: 5432
-  password: MMr5bXCFig7Y0iv_4EKSTCSjOV
+  password: 165PVr6vf7EFQVORoFXTUVcnlB
   pool: 5
   timeout: 5000
 
@@ -30,10 +30,10 @@ test:
 
 production:
   adapter: postgresql
-  host: ec2-23-21-167-249.compute-1.amazonaws.com
-  username: qpqrtetphsxmcd
-  database: d2fgi84drasdht
+  host: ec2-54-83-47-88.compute-1.amazonaws.com
+  username: uftnujxkywwhxi
+  database: d3rqudfjmr86uo
   port: 5432
-  password: MMr5bXCFig7Y0iv_4EKSTCSjOV
+  password: 165PVr6vf7EFQVORoFXTUVcnlB
   pool: 5
   timeout: 5000
