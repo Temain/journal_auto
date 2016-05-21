@@ -28,9 +28,14 @@
                   = m.text_field :name, class: "typeahead manufacturer form-control", placeholder: "Введите производителя..."
 
             .form-group
-              = f.label :inventory_number, "Транзитный номер", class: "col-lg-2 control-label"
+              = f.label :cost, "Стоимость", class: "col-lg-2 control-label"
               .col-lg-10
-                = f.text_field :inventory_number, placeholder: "Введите инвентарный номер...",
+                = f.text_field :cost, placeholder: "Введите стоимость...", class: "form-control"
+
+            .form-group
+              = f.label :inventory_number, "Номер", class: "col-lg-2 control-label"
+              .col-lg-10
+                = f.text_field :inventory_number, placeholder: "Введите номер...",
                                 maxlength: "12", class: "form-control"
 
             .form-group

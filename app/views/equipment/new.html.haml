@@ -48,9 +48,14 @@
                     { prompt: "Выберите салон..." }, class: "form-control"
 
             .form-group
-              = f.label :inventory_number, "Транзитный номер", class: "col-lg-2 control-label"
+              = f.label :cost, "Стоимость", class: "col-lg-2 control-label"
               .col-lg-10
-                = f.text_field :inventory_number, placeholder: "Введите транзитный номер...",
+                = f.text_field :cost, placeholder: "Введите стоимость...", class: "form-control"
+
+            .form-group
+              = f.label :inventory_number, "Номер", class: "col-lg-2 control-label"
+              .col-lg-10
+                = f.text_field :inventory_number, placeholder: "Введите номер...",
                                 maxlength: "12", class: "form-control"
 
             .form-group

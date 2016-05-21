@@ -39,7 +39,7 @@ class EquipmentController < ApplicationController
   end
 
   def update
-    @manufacturer = Manufacturer.find_or_create_by(name: params[:manufacturer][:name])
+    @manufacturer = Manufacturer.find_or_create_by(name: params[:equipment][:manufacturer_attributes][:name])
     if !@manufacturer.name.empty?
       if @manufacturer.new_record?
         @manufacturer.save
@@ -154,7 +154,7 @@ class EquipmentController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
-      params.require(:equipment).permit(:model, :inventory_number, :equipment_type_id, :department_id)
+      params.require(:equipment).permit(:model, :inventory_number, :equipment_type_id, :department_id, :cost)
     end
 end
 
